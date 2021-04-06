@@ -4,16 +4,14 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.GregorianCalendar;
 import java.util.Set;
 
-public class CookiesTest {
+public class ManageMethodTest {
 
     WebDriver driver;
 
@@ -33,8 +31,8 @@ public class CookiesTest {
     }
     @AfterEach
     public void closeAndQuit(){
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
     }
 
     @Test
@@ -66,5 +64,20 @@ public class CookiesTest {
             System.out.println(cookie);}
     }
 
+    @Test
+    public void adjustWindowSettings()  {
+
+        Point position = driver.manage().window().getPosition();
+        Assertions.assertEquals(new Point(8,30),position,"Position of window isn't as expected.");
+        Dimension size = driver.manage().window().getSize();
+        Assertions.assertEquals(new Dimension(1290,730),size,"Dimension is not as set up.");
+        System.out.println(driver.manage().window().getPosition().toString() + " / " + driver.manage().window().getSize().toString());
+        driver.manage().window().maximize();
+        try{
+            Thread.sleep(3000);
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }
+    }
     }
 
