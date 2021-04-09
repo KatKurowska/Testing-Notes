@@ -1,4 +1,4 @@
-package Exercises;
+package test.java.Exercises;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
