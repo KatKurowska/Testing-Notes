@@ -19,7 +19,7 @@ public class FindingObjectsTest {
     public void setDriver() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("http://wikipedia.pl");
+        driver.get("http://wikipedia.pl"); //radek gowno
     }
 
     @AfterEach
