@@ -24,8 +24,8 @@ public class FindingObjectsTest {
 
     @AfterEach
     public void closeAndQQuit() {
-        //driver.close();
-        //driver.quit();
+        driver.close();
+        driver.quit();
     }
 
     @Test
