@@ -45,6 +45,12 @@ public class FindingObjectsTest {
         Assertions.assertTrue(elementWithTwoClasses != null, "Element was not found.");
 
         int imagesCounter = driver.findElements(By.tagName("img")).size();
-        System.out.println("There are "+ imagesCounter + " image elements on this site.");
+        System.out.println("There are " + imagesCounter + " image elements on this site.");
+    }
+
+    @Test
+    public void findElementByText() {
+        driver.findElement(By.linkText("Przejdź do wyszukiwania"));
+        driver.findElement(By.partialLinkText("redagować"));
     }
 }
